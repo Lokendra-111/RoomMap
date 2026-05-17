@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2=8bno5#2#4&y9by54)@&g_6hg+bo$r9h600a$yqa4=pezyg@2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'app_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
+        'NAME': 'room_db',
         'USER': 'root',
         'PASSWORD': 'Meroshare@1804',
         'HOST': 'localhost',
